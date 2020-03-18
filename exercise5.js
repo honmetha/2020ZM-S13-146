@@ -28,17 +28,30 @@ const array = [
 ];
 
 //Create an array using forEach that has all the usernames with a "!" to each of the usernames
+const exclamationMark = [];
+const newArray = array.forEach(profile => {
+  exclamationMark.push(profile.username + "!")
+});
+
+console.log(exclamationMark);
 
 
 //Create an array using map that has all the usernames with a "? to each of the usernames
+const mapArray = array.map(profile => profile.username + "?");
+console.log(mapArray);
 
 
 //Filter the array to only include users who are on team: red
+const filterArray = array.filter(profile => profile.team === "red");
+console.log(filterArray);
 
 
 //Find out the total score of all users using reduce
+const reduceArray = array.reduce((accumulator, profile) => accumulator + profile.score, 0);
+console.log(reduceArray);
 
-// (1), what is the value of i?
+
+// (1), what is the value of i? 1-5
 // (2), Make this map function pure:
 const arrayNum = [1, 2, 4, 5, 8, 9];
 const newArray = arrayNum.map((num, i) => {
