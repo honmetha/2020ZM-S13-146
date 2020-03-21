@@ -29,10 +29,7 @@ const array = [
 
 //Create an array using forEach that has all the usernames with a "!" to each of the usernames
 const exclamationMark = [];
-const newArray = array.forEach(profile => {
-  exclamationMark.push(profile.username + "!")
-});
-
+array.forEach(profile => exclamationMark.push(profile.username + "!"));
 console.log(exclamationMark);
 
 
@@ -51,13 +48,18 @@ const reduceArray = array.reduce((accumulator, profile) => accumulator + profile
 console.log(reduceArray);
 
 
-// (1), what is the value of i? 1-5
+// (1), what is the value of i? 1-5 or INDEX of the array.
 // (2), Make this map function pure:
 const arrayNum = [1, 2, 4, 5, 8, 9];
 const newArray = arrayNum.map((num, i) => {
-	console.log(num, i);
-	alert(num);
 	return num * 2;
 })
 
 //BONUS: create a new list with all user information, but add "!" to the end of each items they own.
+const x = array.map(profile => {
+  profile.items = profile.items.map(item => {
+    return item + "!";
+  });
+  return profile;
+});
+console.log(x);
