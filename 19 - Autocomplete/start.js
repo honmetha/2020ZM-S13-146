@@ -88,6 +88,7 @@
       carBrand.toLowerCase().startsWith(inputText)
     );
 
+    clearResults();
     const ulElem = document.createElement("ul");
     ulElem.classList.add("results");
 
