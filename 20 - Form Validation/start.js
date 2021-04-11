@@ -7,6 +7,15 @@
     form.classList.add("invalid");
   }
 
+  function displaySuccess() {
+    document.body.innerHTML = "";
+
+    const pElem = document.createElement("p");
+    pElem.innerText = "You have been logged in successfully";
+    pElem.classList.add("success");
+    document.body.appendChild(pElem);
+  }
+
   function resetState(elem) {
     const smallElem = elem.parentElement.querySelector("small");
     smallElem.innerText = "";
@@ -32,15 +41,6 @@
     if (!regex.test(elem.value)) {
       displayError(elem, "Email must be valid");
     }
-  }
-
-  function displaySuccess() {
-    document.body.innerHTML = "";
-
-    const pElem = document.createElement("p");
-    pElem.innerText = "You have been logged in successfully";
-    pElem.classList.add("success");
-    document.body.appendChild(pElem);
   }
 
   function validateForm(event) {
